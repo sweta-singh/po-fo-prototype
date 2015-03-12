@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Royal Mail 2nd Class",
+        "price": "£13.75"
+    },
+    {
+        "name": "Royal Mail 2nd Class - Signed for",
+        "price": "£14.85"
+    },
+	{
+        "name": "Royal Mail 1st Class",
+        "price": "£15.85"
+    },
+	{
+        "name": "Royal Mail 1st Class - Signed for",
+        "price": "£16.95"
+    },
+	{
+        "name": "Royal Mail Special Delivery Guaranteed by 1pm",
+        "price": "£26.60"
+    }
+  
+]

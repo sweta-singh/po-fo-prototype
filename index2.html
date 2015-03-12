@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rod Fishing Licence</title>
+
+    <!-- Bootstrap and other stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/responds.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Angular.js -->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+
+    <!-- Header JS files (rest are at bottom of the page) -->
+    <script src="js/app.js"></script>
+
+    <script>function proceedToIntegration(){
+        parent.addPostageToBasket();
+    }
+    </script>
+
+</head>
+
+<!-- apply our angular app -->
+<body  ng-app="rfl">
+<div class="container">
+
+    <!-- Views injected here -->
+    <div ui-view>
+
+    </div>
+
+
+
+
+</div>
+
+
+<!-- jQuery,  bootstrap js and other JS libraries  -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
+
+<script>
+    $('#datetimepicker_mask').datetimepicker({
+        mask:'9999/19/39 29:59'
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div id="form-container">
+    <div class="page-header text-center" style="display: none;">
+        <h2>Rod Fishing License Application</h2>
+        <div id="status-buttons" class="text-center">
+            <a ui-sref-active="active" ui-sref=".rfl-1"><span>1</span> Licence</a>
+            <a ui-sref-active="active" ui-sref=".rfl-2"><span>2</span> Details</a>
+            <a ui-sref-active="active" ui-sref=".rfl-3"><span>3</span> Confrimation</a>
+        </div>
+    </div>
+
+    <!-- use ng-submit to catch the form submission and use our Angular function -->
+    <form id="rfl-form" ng-submit="processForm()">
+
+        <!-- our nested state views will be injected here -->
+        <div id="form-views" ui-view></div>
+    </form>
+
+</div>
+

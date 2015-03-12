@@ -1,0 +1,60 @@
+<script>
+		angular.element(document.getElementById('renew-form')).scope().renew();
+</script>
+<div class="container" id="renew-form">
+		<div class="row">
+			<div class="col-sm-12 navigation">
+				<img src="img/breadcrumb_3.png" class="center-block img-responsive">
+			</div>
+		</div>
+		<div class="row wizard">
+			<div class="row no-margin">
+				<div class="col-sm-12">
+					<h4>Renewal Summary</h4>
+				</div>
+			</div>
+			<div class="row some-margin">
+				<div class="col-sm-6 summary-col">
+					<h4>Renewal Number</h4><br />
+					<p>{{formData.renewalNum}}</p>
+					<h4>Licence</h4><br />
+					<h5>Type:</h5>				<span>Adult Salmon</span><br />
+					<h5>Duration:</h5>				<span>Full</span><br />
+					<h5>Date of Birth:</h5>			<span>{{formData.dateOfBirth | date:'dd/MM/yyyy'}}</span><br />
+					<h5>Disabled Licence:</h5>		<span>No</span><br />
+					<br><br>
+					<h5>Start Date:</h5>	<span>01/04/2015</span><br>
+					<h5>End Date:</h5>	<span>31/03/2016</span>
+
+				</div>
+				<div class="col-sm-6 summary-col">
+					<h4>Licence Holder Details</h4><br />
+					<h5>Name:</h5>				<span>{{formData.cstmTitle}} {{formData.cstmFirstName}} {{formData.cstmLastName}}</span><br />
+					<h5>Email:</h5>				<span>{{formData.cstmEmail}}</span><br />
+					<h5>Mobile Number:</h5>		<span>{{formData.cstmMobile}}</span><br /><br />
+					<h5>Address</h5>			<p>{{formData.cstmHouseNo}} {{formData.cstmAddress1}}<br />{{formData.cstmAddress2}}<br />{{formData.cstmCity}}<br />{{formData.cstmCountry}}<br />{{formData.cstmPostcode}}</p><br />
+
+				</div>
+			</div>
+			<div class="row some-margin">
+				<div class="col-sm-6">
+					<a ui-sref="form.license" class="btn btn-secondary">Edit Licence Details</a>
+				</div>
+				<div class="col-sm-6">
+					<a ui-sref="form.details" class="btn btn-secondary">Edit Licence Holder Details</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row no-margin">
+			<div class="col-xs-6 back-nav">
+
+			</div>
+			<div class="col-xs-6 next-nav">
+				<button href="acceptance-4.html" onclick="parent.addPostageToBasket();" class="btn btn-lg btn-primary but-full" >
+					Add to Basket <span class="glyphicon glyphicon-chevron-right"></span>
+				</button>
+			</button>
+			</div>
+		</div>
+	</div>

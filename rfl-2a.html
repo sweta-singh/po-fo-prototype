@@ -1,0 +1,101 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 navigation">
+			<img src="img/breadcrumb_2.png" class="center-block img-responsive">
+		</div>
+	</div>
+	<div class="wizard" style="padding: 8px;">
+	<div class="row" id="primary-details">
+		<div class="row no-margin">
+			<div class="col-sm-7">
+				<h4>Details</h4>
+				<h5 style="display:inline">Are you the licence holder?</h5>
+				<div class="checkRadioContainer" style="display: inline-block;">
+					<label>
+						<input type="radio" name="isLicenseHolder"  ng-model="formData.isLicenseHolder" value="yes"/>
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>Yes</span>
+					</label>
+					<label>
+						<input type="radio" name="isLicenseHolder" value="no" ng-model="formData.isLicenseHolder" />
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>No</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row no-margin">
+			<div class="col-sm-5">
+				<h5>Title</h5>
+				<select ng-model="formData.cstmTitle">
+					<option>Ms</option>
+					<option>Mrs</option>
+					<option>Mr</option>
+				</select>
+				<h5>First Name</h5>
+				<input type="text"  ng-model="formData.cstmFirstName"/>
+				<h5>Last Name</h5>
+				<input type="text"  ng-model="formData.cstmLastName"/>
+				<h5>Email</h5>
+				<input type="text"  ng-model="formData.cstmEmail"/>
+				<h5>Mobile Number</h5>
+				<input type="text"  ng-model="formData.cstmPhone"/>
+			</div>
+			<div class="col-sm-6 address-col">
+				<h5>House Number or Name</h5>
+				<input type="text"  ng-model="formData.cstmAddress1"/>
+				<h5>Postcode</h5>
+				<input type="text"  ng-model="formData.cstmPostcode" />
+				<div id="loockup" class="btn btn-lg btn-primary" style="display: inline-block; height: 38px; ">Find Address</div>
+				<h5>Street name</h5>
+				<input type="text"  ng-model="formData.cstmAddress2"/>
+				<h5>City</h5>
+				<input type="text"  ng-model="formData.cstmCity"/>
+				<h5>Country</h5>
+				<input type="text"  ng-model="formData.cstmCountry" />
+
+				<div  ng-if="formData.isLicenseHolder == 'no'">
+					<h5>Add Licence Holder Details</h5>
+					<div class="btn btn-lg btn-primary but-full" id="addmoredetails">
+						Add Details
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="row no-margin">
+		<div class="col-xs-6 back-nav">
+			<a  ui-sref="form.license"   class="btn btn-lg btn-secondary but-full">
+				<span class="glyphicon glyphicon-chevron-left"></span> Back
+			</a>
+		</div>
+		<div class="col-xs-6 next-nav">
+			<a ui-sref="form.confirm"  class="btn btn-lg btn-primary but-full">
+				Next <span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("#loockup").click(function(){
+			$('[ng-model="formData.cstmAddress1"]').val('Flat 620 D');
+			$('[ng-model="formData.cstmAddress2"]').val('114 Fieldgate St');
+			$('[ng-model="formData.cstmCity"]').val('London');
+			$('[ng-model="formData.cstmCountry"]').val('UK');
+		});
+
+			$("#addmoredetails").click(function(){
+			$("#account-holder-details").slideUp('fast');
+			$("#primary-details").slideDown('fast');
+		});
+		$("#gobacktoprimarydetails").click(function(){
+			$("#account-holder-details").toggle();
+			$("#primary-details").toggle();
+		});
+	})
+</script>

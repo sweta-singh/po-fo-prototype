@@ -1,0 +1,165 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 navigation">
+			<img src="img/breadcrumb_1.png" class="center-block img-responsive">
+		</div>
+	</div>
+	<div class="row wizard">
+		<div class="row some-margin">
+				<h4>Licence Duration</h4>
+				<div class="checkRadioContainer">
+					<label>
+						<input type="radio" name="durationType"  ng-model="formData.durationType" value="full"/>
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>Buy Full Licence</span>
+					</label>
+					<label>
+						<input type="radio" name="durationType" value="short" ng-model="formData.durationType" />
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>Buy Short-term Licence</span>
+					</label>
+					<label>
+						<input type="radio" name="durationType" value="reniew" ng-model="formData.durationType" />
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>Renew Full Licence</span>
+					</label>
+				</div>
+		</div>
+		<div class="row some-margin">
+
+			<div  ng-if="formData.durationType == 'full'">
+
+				<h4>Full Licence Options</h4>
+
+				<div class="row no-margin">
+					<div class="col-sm-3">
+						<h5 style="display:inline">Customer is Licence Holder?</h5>
+					</div>
+					<div class="col-sm-6">
+						<div class="checkRadioContainer" style="display: inline-block;">
+							<label>
+								<input type="radio" name="isLicenseHolder"  ng-model="formData.isLicenseHolder" value="yes"/>
+								<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+								<span>Yes</span>
+							</label>
+							<label>
+								<input type="radio" name="isLicenseHolder" value="no" ng-model="formData.isLicenseHolder" />
+								<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+								<span>No</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row no-margin">
+					<div class="col-sm-3">
+						<h5 style="display:inline">Disabled Licence?</h5>
+					</div>
+					<div class="col-sm-6">
+						<div class="checkRadioContainer" style="display: inline-block;">
+							<label>
+								<input type="radio" name="disabledLicense"  ng-model="formData.disabled" value="isDisabled"/>
+								<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+								<span>Yes</span>
+							</label>
+							<label>
+								<input type="radio" name="disabledLicense" value="notDisabled" ng-model="formData.disabled" />
+								<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+								<span>No</span>
+							</label>
+						</div>
+
+					</div>
+					<div  ng-if="formData.disabled == 'isDisabled' && formData.durationType == 'full'" class="col-sm-3 disabledContainer">
+						<input type="text" name="blueBadgeNiNumber" ng-model="formData.badgeNiNo" class="input-lg bluebadge">
+					</div>
+					</div>
+
+
+			</div>
+			<div  ng-if="formData.durationType == 'short'">
+				<h4>Short-term Licence Options</h4>
+				<div class="row">
+					<div class="col-sm-6">
+						<h5>Duration</h5>
+						<div class="checkRadioContainer">
+							<label>
+								<input type="radio" name="shortDuration"  ng-model="formData.shortDuration" value="1day"/>
+								<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+								<span>1 Day (24 hours)</span>
+							</label>
+							<label>
+								<input type="radio" name="shortDuration" value="8day" ng-model="formData.shortDuration" />
+								<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+								<span>8 Consecutive Days</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="col-sm-3">
+						<h5>Date to start:</h5>
+						<input type="date" value="" id="datetimepicker_mask" ng-model="formData.startDate"/>
+					</div>
+					<div class="col-sm-3">
+						<h5>Time to start:</h5>
+						<input type="time" ng-model="formData.startTime"/>
+					</div>
+				</div>
+
+			</div>
+
+			<div  ng-if="formData.durationType == 'reniew'">
+				<h4>Renewal Licence Options</h4>
+				<h5>Licence Renewal Number</h5>
+				<input type="text" name="licenceRenewalNumber" ng-model="formData.renewalNumber">
+			</div>
+
+
+		<div class="row no-margin" ng-if="formData.durationType != 'none'">
+			<div class="col-sm-6 no-pad">
+				<h5>Licence Type</h5>
+				<div class="checkRadioContainer">
+					<label>
+						<input type="radio" name="licenseFishType"  ng-model="formData.licenseFishType" value="salmon"/>
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>Salmon & Sea Trout</span>
+					</label>
+					<label>
+						<input type="radio" name="licenseFishType" value="course" ng-model="formData.licenseFishType" />
+						<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						<span>Trout & Course</span>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<h5>Date of Birth</h5>
+				<input type="date"  ng-model="formData.dateOfBirth" />
+			</div>
+
+		</div>
+		</div>
+	</div>
+
+
+	<div class="row no-margin">
+		<div class="col-xs-6 back-nav">
+			<a href="index2.html" class="btn btn-lg btn-secondary but-full">
+				<span class="glyphicon glyphicon-chevron-left"></span> Back
+			</a>
+		</div>
+		<div class="col-xs-6 next-nav">
+			<a ui-sref="form.details"  class="btn btn-lg btn-primary but-full">
+				Next <span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+
+
+</div>
+
+<script>
+	$("#qr").keyup(function(){
+
+	});
+</script>

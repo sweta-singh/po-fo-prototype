@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mails</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<link href="css/bootstrap-table.min.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<script>
+		function ButtonClick_Test()
+		{
+			document.getElementById("address1").value= 'Kemperleye Way';
+			document.getElementById("address2").value= 'Bradley Stoke';
+			document.getElementById("city").value= 'Bristol';
+			document.getElementById("country").value= 'United Kingdom';
+
+			document.getElementById("full-address").style.display = "inline";
+		}
+	</script>
+</head>
+<body>
+<div class="container address-screen">
+	<div class="row">
+		<div class="col-sm-12 navigation">
+			<img src="img/breadcrumb_2.png" class="center-block img-responsive">
+		</div>
+	</div>
+	<div class="row wizard">
+		<div id="primary-details">
+			<div class="row no-margin">
+				<div class="col-sm-12">
+					<h4>Customer Details</h4>
+
+
+					<div class="row">
+						<div id="form-container">
+							<div class="row no-margin">
+								<div class="col-sm-12">
+									<label for="title">Title</label>
+									<div class="checkRadioContainer">
+									<label>
+										<input type="radio" name="title"  ng-model="formData.cstmTitle" value="Mr"/>
+										<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+										<span>Mr</span>
+									</label>
+									<label>
+										<input type="radio" name="title" value="Mrs" ng-model="formData.cstmTitle" />
+										<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+										<span>Mrs</span>
+									</label>
+									<label>
+										<input type="radio" name="title" value="Miss" ng-model="formData.cstmTitle" />
+										<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+										<span>Miss</span>
+									</label>
+										</div>
+								</div>
+							</div>
+
+							<div class="row no-margin">
+								<div class="col-sm-4 no-padding">
+									<div class="form-group col-sm-12">
+										<label for="firstname">First Name</label>
+										<input type="text"  class="form-control input-lg" id="firstname" ng-model="formData.cstmFirstName"/>
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="lastname">Last Name</label>
+										<input type="text" id="lastname" class="form-control input-lg" ng-model="formData.cstmLastName"/>
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="email">Email</label>
+										<input type="text" id="email" class="form-control input-lg" ng-model="formData.cstmEmail"/>
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="mobile">Mobile</label>
+										<input type="text" id="mobile" class="form-control input-lg" ng-model="formData.cstmMobile"/>
+									</div>
+								</div>
+								<div class="col-sm-8 no-padding address-col">
+									<div class="form-group col-sm-3">
+										<label for="name">House No.</label>
+										<input type="text" class="form-control input-lg" name="houseno" ng-model="formData.cstmHouseNo">
+									</div>
+
+									<div class="form-group col-sm-9">
+										<div class="col-sm-12 no-pad"><label for="postcode">Post Code</label></div>
+										<div class="col-sm-7 no-pad"><input type="text" class="form-control input-lg" name="postcode" ng-model="formData.cstmPostcode"></div>
+										<div class="col-sm-5 no-pad"><button type="button" class="btn btn-lg btn-primary pc-btn pc-btn-rfl" onclick="ButtonClick_Test()">Find Address</button></div>
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="address1">Address Line 1</label>
+										<input type="text" class="form-control input-lg" id="address1" name="address1" ng-model="formData.cstmAddress1">
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="address2">Address Line 2</label>
+										<input type="text" class="form-control input-lg" id="address2" name="address2" ng-model="formData.cstmAddress2">
+									</div>
+									<div class="form-group col-sm-6">
+										<label for="city">City</label>
+										<input type="text" class="form-control input-lg" id="city" name="city" ng-model="formData.cstmCity">
+									</div>
+									<div class="form-group col-sm-6">
+										<label for="country">Country</label>
+										<input type="text" class="form-control input-lg" id="country" name="country" ng-model="formData.cstmCountry">
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row no-margin">
+
+
+							</div>
+							<div class="row no-margin">
+
+
+							</div>
+							<div class="row no-margin">
+
+
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row no-margin">
+		<div class="col-xs-6 back-nav">
+			<a  ui-sref="form.license"   class="btn btn-lg btn-secondary but-full">
+				<span class="glyphicon glyphicon-chevron-left"></span> Back
+			</a>
+		</div>
+		<div class="col-xs-6 next-nav">
+			<a ui-sref="form.confirm"  class="btn btn-lg btn-primary but-full">
+				Next <span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-table.min.js"></script>
+</body>
+</html>
